@@ -21,4 +21,8 @@ class SongssController < ApplicationController
     @artist.update(params.require(:artist).permit(:name, :bio))
     redirect_to artist_path(@artist)
   end
+
+  def index
+    @songs = Song.all
+  end
 end
